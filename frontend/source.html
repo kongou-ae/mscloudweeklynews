@@ -20,18 +20,12 @@
     </nav>
     <div class="container">
         <div id="app" >
-            <div class="col s12 m6">
-                <div class="loader" v-if="items == null">
-                </div>
-                <div v-else>
-                    <div class="card horizontal" v-for="item in items">
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p class="itemTitle"><a v-bind:href="item.originId" target="_blank" rel="noopener noreferrer">{{ item.title }}</a></p>
-                                <p class="itemFrom">From <a v-bind:href="item.originhtmlUrl" target="_blank" rel="noopener noreferrer">{{ item.originTitle }}</a> on {{ item.crawled | unixTimeToData }}</p>
-                            </div>
-                        </div>
-                    </div>    
+            <div class="card horizontal" v-for="item in items">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p class="itemTitle"><a v-bind:href="item.originId" target="_blank" rel="noopener noreferrer">{{ item.title }}</a></p>
+                        <p class="itemFrom">From <a v-bind:href="item.originhtmlUrl" target="_blank" rel="noopener noreferrer">{{ item.originTitle }}</a> on {{ item.published | unixTimeToData }}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -39,6 +33,5 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="index.js"></script>
-
 </body>
 </html>
